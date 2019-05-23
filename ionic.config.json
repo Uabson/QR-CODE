@@ -1,0 +1,7 @@
+{
+  "name": "Testar",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

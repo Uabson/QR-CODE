@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center><ion-icon name="barcode"></ion-icon> GERADOR DE QR CODE</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <h3 text-center>Gerar QR CODE</h3>
+<ion-item>
+  <ion-input type="text" placeholder="Dados do Seu QR" [(ngModel)]="qrData"></ion-input>
+</ion-item>
+<button ion-button full (click)="createCode()">Gerar QR</button>
+
+<h3 text-center>Leitura do QR Code</h3>
+<button ion-button full (click)="scanCode()">Ler QR</button>
+
+<ion-card *ngIf="createCode">
+  <ion-card-content>
+  <p>Resultado do Gerador: </p>
+  </ion-card-content>
+<ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+</ion-card>
+
+<ion-card *ngIf="scannedCode">
+<ion-card-content>
+  Resultado do seu Scanner: {{ scannedCode }}
+</ion-card-content>
+</ion-card>
+</ion-content>
